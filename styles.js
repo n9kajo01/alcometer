@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     title:{
-      fontSize: 50,
+      fontSize: 60,
     },
     input:{
       borderBottomWidth: 1
@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
     text:{
       paddingTop: 20,
       paddingBottom: 5,
+      fontWeight: "bold",
+      fontSize: 20,
     },
     result: {
-      fontSize: 40,
+      fontSize: 70,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',

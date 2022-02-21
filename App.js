@@ -12,6 +12,7 @@ export default function App() {
   const [time, setTime] = useState(1);
   const [gender, setGender] = useState("male");
   const [bac, setBac] = useState(0);
+  const [resultColor, setResultColor] = useState("")
 
   function CalculateBAC() {
     if (weight === "" || weight === 0) {
@@ -30,6 +31,19 @@ export default function App() {
       if (result < 0) {
         result = 0
       }
+
+      if(result < 0.25){
+        setResultColor("green")
+      }
+      
+      if(result >= 0.25 && result < 0.5){
+        setResultColor("gold")
+      }
+
+      if(result >= 0.5){
+        setResultColor("red")
+      }
+
       setBac(result)
     }
   }
@@ -107,7 +121,7 @@ export default function App() {
           radio_props={genders}
           onPress={value => setGender(value)}
         />
-        <Text style={styles.result}>{bac.toFixed(2)}</Text>
+        <Text style={[styles.result, {color: resultColor}]}>{bac.toFixed(2)}</Text>
         <Button
           title="Calculate"
           onPress={CalculateBAC} />
